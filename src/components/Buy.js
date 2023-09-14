@@ -17,8 +17,8 @@ const Buy = ({ provider, price, crowdsale, setIsLoading }) => {
 		try {
 			const signer = await provider.getSigner()
 
-			// We need to calculate the required ETH in order to buy the tokens...
 			const value = ethers.utils.parseUnits((amount * price).toString(), 'ether')
+			
 			const formattedAmount = ethers.utils.parseUnits(amount.toString(), 'ether')
 			
 			const transaction = await crowdsale.connect(signer).buyTokens(formattedAmount, { value: value })

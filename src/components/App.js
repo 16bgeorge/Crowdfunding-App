@@ -2,33 +2,28 @@ import { useEffect, useState } from 'react'
 import { Container } from 'react-bootstrap'
 import { ethers } from 'ethers'
 
-// Components 
+
 import Navigation from './Navigation';
 import Info from './Info';
 import Loading from './Loading';
 import Progress from './Progress';
 import Buy from './Buy';
-// ABIs
+
 import TOKEN_ABI from '../abis/Token.json'
 import CROWDSALE_ABI from '../abis/Crowdsale.json'
 
-// config
 import config from '../config.json';
 
 function App() {
 
 	const [provider, setProvider] = useState(null)
-	
 	const [crowdsale, setCrowdsale] = useState(null)
 	
 	const [account, setAccount] = useState(null)
-	
 	const [accountBalance, setAccountBalance] = useState(0)
 	
 	const [isLoading, setIsLoading] = useState(true)
-
 	const [price, setPrice] = useState(0)
-	
 	const [maxTokens, setMaxTokens] = useState(0)
 	
 	const [tokensSold, setTokensSold] = useState(0)
